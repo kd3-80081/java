@@ -25,7 +25,7 @@ import com.app.geometry.*;
 
 public class TestPointArray1 {
 
-	static int Menu() {
+	 public static int Menu() {
 		int choice;
 		System.out.println("****************************************");
 		System.out.println("0. EXIT.");
@@ -100,11 +100,11 @@ public class TestPointArray1 {
 				System.out.print("ENTER SECOND POINT :");
 				p2 = sc.nextInt();
 
-				if (((p1-1) <= point.length && 0 < p1) && ((p2-1) <= point.length && 0 < p2)) {
-					if (point[p1-1].equals(point[p2-1])) {
+				if ((p1>=0 && p1 <= point.length ) && (p2>=0 && p2 <= point.length)) {
+					if (point[p1-1].isEqual(point[p2-1])) {
 						System.out.println("Two Points are Same");
 					} else {
-						System.out.println("Distance :" + point[p1].calculateDistance(point[p2]));
+						System.out.println("Distance :" + point[p1-1].calculateDistance(point[p2-1]));
 					} // else
 				} else {
 					System.out.println("INVALID POINT...... Please Retry");
