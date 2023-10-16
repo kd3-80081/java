@@ -4,7 +4,7 @@ import com.sunbeam.assn8_2.Person;
 
 
 
-	public class Box<T extends Person> {
+	public class Box<T> {
 		private T obj;
 
 		public void setObj(T obj) {

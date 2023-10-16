@@ -7,19 +7,17 @@ public class Person implements Displayable {
 	private String name;
 	
 
-	private Date dob = new Date();
+	private int id;
 
 	public Person() {
 		this.name = " ";
-		this.dob.setDay(0);
-		this.dob.setMonth(0);
-		this.dob.setYear(0);
+		this.id =0;
 	}
 
-	public Person(String name, Date dob) {
+	public Person(String name, int id) {
 
 		this.name = name;
-		this.dob = dob;
+		this.id =id;
 	}
 
 	public String getName() {
@@ -30,35 +28,34 @@ public class Person implements Displayable {
 		this.name = name;
 	}
 
-	public Date getDob() {
-		return dob;
+	public int getId() {
+		return this.id;
 	}
 
-	public void setDob(Date dob) {
-		this.dob = dob;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public void accept() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter the Name of the Person");
 		this.name = sc.next();
-		System.out.println("Enter the Date of Birth of the Person");
-		this.dob.accept();
+		System.out.println("Enter the Id of the Person");
+		this.id= sc.nextInt();
 	}
 
 	@Override
 	public void displayable() {
 
 		System.out.println("Name :" + this.name);
-		System.out
-				.println("Date of Birth : " + this.dob.getDay() + "/" + this.dob.getMonth() + "/" + this.dob.getYear());
+		System.out.println("Persoon id : " + this.id);
 
 	}
 
 	@Override
 	public String toString() {
 		
-		return "Name : " + this.name + "    Date of Birth : " + this.dob.getDay() + "/" + this.dob.getMonth() + "/" + this.dob.getYear();
+		return "Name : " + this.name + "    Perosn Id : " + this.id;
 	}
 
 	

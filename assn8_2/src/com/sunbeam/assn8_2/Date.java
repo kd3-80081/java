@@ -1,6 +1,6 @@
 package com.sunbeam.assn8_2;
 import java.util.*;
-public class Date {
+public class Date implements Displayable{
 	private int day;
 	private int month;
 	private int year;
@@ -54,5 +54,21 @@ public class Date {
 		
 	
 	}
+
+	@Override
+	public void displayable() {
+		System.out.println("Date of Birth : " + this.day + "/" + this.month + "/" + this.year);
+		
+	}
+
+	@Override
+	public String toString() {
+		
+		return "Date  : " + + this.day + "/" + this.month + "/" + this.year;
+	}
+	
+	
+	
+	
 
 }
