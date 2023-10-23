@@ -71,12 +71,15 @@ public class Main {
 
 			case 3: {
 				try (CandidateDAO cDao = new CandidateDAO()) {
-					System.out.println("Enter the Party Name to find the total votes");
-					String party = sc.next();
-					PartyVotes p1 = new PartyVotes();
-					list.add(cDao.getPartyWiseVote(p1, party));
-					System.out.println(cDao.getPartyWiseVote(p1, party));
+					
+					
+					cDao.getPartyWiseVote().forEach(c->System.out.println(c));
+					
 					System.out.println("PartyWise Votes object added in the list");
+//					for (PartyVotes p2 : list) {
+//						System.out.println(p2);
+//					}
+					System.out.println();
 				}catch(Exception e) {
 					e.printStackTrace();
 				}

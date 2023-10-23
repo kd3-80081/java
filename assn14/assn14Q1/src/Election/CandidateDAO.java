@@ -55,20 +55,23 @@ public class CandidateDAO implements AutoCloseable {
 		} return count;
 	} 
 	
-	public PartyVotes getPartyWiseVote(PartyVotes c, String party) throws SQLException{
-		String sql = "select party, sum(votes) from candidates where party = ?";
+	public List<PartyVotes> getPartyWiseVote() throws SQLException{
+		List<PartyVotes> list=new ArrayList<PartyVotes>();
+		String sql = "select party, sum(votes) from candidates group by party";
 		try(PreparedStatement stmt = con.prepareCall(sql)){
-			stmt.setString(1, party);
 			try(ResultSet rs = stmt.executeQuery()){
 				while(rs.next()) {
+				PartyVotes c=new PartyVotes();
 				c.setParty(rs.getString("party"));
 				c.setVotes(rs.getInt("sum(votes)"));
-				return c;
+				list.add(c);
+//				System.out.printf("%s,%d\n",c.getParty(),c.getVotes());
+
 				}
-			}return c;
-			
-			
+			}
+
 		}
+		return list;
 	}
 
 }

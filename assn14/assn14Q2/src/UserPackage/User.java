@@ -29,11 +29,30 @@ public class User {
 		System.out.println("Enter the Role");
 		this.role=sc.next();
 	}
+
+	public User(int id, String fName) {
+		this.id = id;
+		this.fName = fName;	
+	}
+	public User(int id) {
+		this.id = id;
+		
+	}
 	
 	public User() {
 		}
 
+	public User(int id, String fName, String lName, String eMail,  String dob, boolean status,String role) {
 
+		this.id = id;
+		this.fName = fName;
+		this.lName = lName;
+		this.eMail = eMail;
+		
+		this.dob = dob;
+		this.status = status;
+		this.role = role;
+	}
 
 	public User(int id, String fName, String lName, String eMail, String passwd, String dob, boolean status,String role) {
 
